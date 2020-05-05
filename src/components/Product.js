@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 import {ProductComsumer} from '../context'
+import PropTypes from 'prop-types'
 
 export default class Product extends Component {
     render() {
@@ -30,6 +31,16 @@ export default class Product extends Component {
             </ProductWrapper>
         )
     }
+}
+
+Product.propTypes = {
+    product: PropTypes.shape({
+        id: PropTypes.number,
+        img: PropTypes.string,
+        title: PropTypes.string,
+        price: PropTypes.number,
+        inCart: PropTypes.bool
+    }).isRequired
 }
 
 const ProductWrapper = styled.div`
@@ -69,5 +80,16 @@ const ProductWrapper = styled.div`
         background: var(--lightBlue);
         border: none;
         color: var(--mainWhite);
+        font-size: 1.4rem;
+        border-radius: .5rem 0 0 0;
+        transform: translate(100%,100%);
+        transition: all .2s linear;
+    }
+    .img-container:hover .cart-btn {
+        transform: translate(0,0);
+    }
+    .cart-btn:hover {
+        color: var(--mainBlue);
+        cursor: pointer;
     }
 `
