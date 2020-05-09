@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-export default function CartTotals({val}) {
+import PayPalButton from './PayPalButton'
+export default function CartTotals({val,history}) {
     const {cartSubTotal, cartTax, cartTotal, clearCart} = val
     return (
         <div>
@@ -28,6 +29,7 @@ export default function CartTotals({val}) {
                                 total : <strong>$ {cartTotal}</strong>
                                 </span>
                             </h5>
+                            <PayPalButton total={cartTotal} clearCart={clearCart} history={history} />
                         </div>
                     </div>
                 </div>
