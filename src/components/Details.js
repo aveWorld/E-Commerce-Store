@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import {ProductConsumer} from '../context';
 import {Link} from 'react-router-dom';
 import {ButtonContainer} from './Button'
-
+//Details page
 export default class Details extends Component {
     render() {
         return (
+            // we wraps everything in Product cunsumer because of Context API
            <ProductConsumer>
                {val => {
-                   const {id, company, img, info, price, title, inCart} = val.detailProduct;
+                   const {id, company, img, info, price, title, inCart} = val.detailProduct; //getting values from context.js
                    return (
                        <div className="container py-5">
                            {/* title */}
@@ -38,16 +39,17 @@ export default class Details extends Component {
                                     {/* buttons */}
                                     <div>
                                         <Link to="/">
+                                            {/* button from styled components ./Button.js */}
                                             <ButtonContainer>
                                                 back to products
                                             </ButtonContainer>
                                         </Link>
                                         <ButtonContainer 
                                         cart
-                                        disabled={inCart?true:false}
+                                        disabled={inCart?true:false} //if product in cart button would be disabled
                                         onClick={() => {
-                                            val.addToCart(id)
-                                            val.openModal(id);
+                                            val.addToCart(id); //adds item to the cart
+                                            val.openModal(id); // open modal window after user click add to the cart
                                         }}
                                         >
                                             {inCart?"inCart" : "add to cart"}

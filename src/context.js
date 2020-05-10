@@ -28,13 +28,13 @@ class ProductProvider extends Component {
             return {products : tempProducts}
         })
     }
-
+    //function to get the item we want to find
     getItem = (id) => {
       const product = this.state.products.find(item => item.id === id);
         return product;
 
     }
-
+    //function to display data of current product
     handleDetail = (id) => {
         const product = this.getItem(id);
         this.setState(() => {
@@ -67,7 +67,7 @@ class ProductProvider extends Component {
             return {modalOpen: false}
         })
     }
-
+    //used to increment the amount of product in the cart
     increment = id => {
         let tempCart = [...this.state.cart];
         let selectedProduct = tempCart.find(item => item.id === id);
@@ -86,7 +86,7 @@ class ProductProvider extends Component {
             this.addTotals()
         })
     }
-
+    //used to decrement the amount of product in the cart
     decrement = id => {
         let tempCart = [...this.state.cart];
         let selectedProduct = tempCart.find(item => item.id === id);
@@ -105,7 +105,7 @@ class ProductProvider extends Component {
             this.addTotals()
         })
     }
-
+    //used to remove item from cart
     removeItem = id => {
        let tempProducts = [...this.state.products];
        let tempCart = [...this.state.cart];

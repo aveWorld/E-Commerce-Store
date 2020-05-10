@@ -1,5 +1,5 @@
 import React from 'react'
-
+// It's component used to display every column of product added to the cart
 export default function CartColumns() {
     return (
         <div className="container-fluid text-center d-none d-lg-block pt-3">

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {ProductConsumer} from '../context';
 import {ButtonContainer} from './Button';
 import {Link} from 'react-router-dom'; 
-
+// It's component for Modal window
 export default class Modal extends Component {
     render() {
         return (
@@ -13,11 +13,12 @@ export default class Modal extends Component {
                    const {img, title, price} = val.modalProduct;
 
                    if(!modalOpen) {
-                       return null;
+                       return null; //if our modal window is currently empry we shouldn't do anything so we return null
                    }
                    else {
                        return (
-                       <ModalContainer>
+                       <ModalContainer> 
+                           {/* ModalContainer is styled components element */}
                            <div className="container">
                                <div className="row">
                                     <div id="modal" className="col-8 mx-auto col-md-6 col-lg-4 text-center text-capitalize p-5">
@@ -26,6 +27,7 @@ export default class Modal extends Component {
                                         <h5>{title}</h5>
                                         <h5 className="text-muted">price : ${price}</h5>
                                         <Link to="/">
+                                        {/* when user click back to shoping we route him back to products and close the modal window */}
                                         <ButtonContainer onClick={() => closeModal()}>
                                         store
                                         </ButtonContainer>

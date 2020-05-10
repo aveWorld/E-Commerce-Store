@@ -44,7 +44,7 @@ export default class Product extends Component {
         )
     }
 }
-
+// We used propTypes to not mess up with prop types
 Product.propTypes = {
     product: PropTypes.shape({
         id: PropTypes.number,

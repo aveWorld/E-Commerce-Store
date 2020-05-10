@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
-
+//404 Page
 export default class Default extends Component {
     render() {
         return (

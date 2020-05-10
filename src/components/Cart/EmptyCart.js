@@ -1,5 +1,5 @@
 import React from 'react'
-
+// It's component to display empty cart
 export default function EmptyCart() {
     return (
         <div className="container mt-5">

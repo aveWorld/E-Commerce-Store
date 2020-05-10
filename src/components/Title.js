@@ -1,5 +1,5 @@
 import React from 'react'
-
+// It's component used to display title
 export default function Title({name, title}) {
     return (
         <div className="row">
